@@ -21,6 +21,9 @@
 		84AA05D828E4431900509DEE /* EditPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA05D728E4431900509DEE /* EditPresenter.swift */; };
 		84AA05DA28E456EC00509DEE /* AddNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA05D928E456EC00509DEE /* AddNewViewController.swift */; };
 		84AA05DC28E457A900509DEE /* AddNewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA05DB28E457A900509DEE /* AddNewPresenter.swift */; };
+		E29E4A8F28E5F49600086B48 /* ToDoListEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29E4A8D28E5F49500086B48 /* ToDoListEntity+CoreDataClass.swift */; };
+		E29E4A9028E5F49600086B48 /* ToDoListEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29E4A8E28E5F49600086B48 /* ToDoListEntity+CoreDataProperties.swift */; };
+		E29E4A9428E5F4FE00086B48 /* DataManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29E4A9328E5F4FE00086B48 /* DataManger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		84AA05D728E4431900509DEE /* EditPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPresenter.swift; sourceTree = "<group>"; };
 		84AA05D928E456EC00509DEE /* AddNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewViewController.swift; sourceTree = "<group>"; };
 		84AA05DB28E457A900509DEE /* AddNewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPresenter.swift; sourceTree = "<group>"; };
+		E29E4A8D28E5F49500086B48 /* ToDoListEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToDoListEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E29E4A8E28E5F49600086B48 /* ToDoListEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToDoListEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E29E4A9328E5F4FE00086B48 /* DataManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,10 @@
 		84AA059F28E4350000509DEE = {
 			isa = PBXGroup;
 			children = (
+				E29E4A9328E5F4FE00086B48 /* DataManger.swift */,
+				E29E4A8D28E5F49500086B48 /* ToDoListEntity+CoreDataClass.swift */,
+				E29E4A8E28E5F49600086B48 /* ToDoListEntity+CoreDataProperties.swift */,
+				E207D52228E4C165000E80A6 /* DatabaseService */,
 				84AA05AA28E4350000509DEE /* TodoList */,
 				84AA05A928E4350000509DEE /* Products */,
 			);
@@ -139,6 +149,13 @@
 			path = ListsCell;
 			sourceTree = "<group>";
 		};
+		E207D52228E4C165000E80A6 /* DatabaseService */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DatabaseService;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -214,11 +231,14 @@
 				84AA05D628E4425F00509DEE /* EditViewController.swift in Sources */,
 				84AA05CD28E435FE00509DEE /* Note.swift in Sources */,
 				84AA05D828E4431900509DEE /* EditPresenter.swift in Sources */,
+				E29E4A8F28E5F49600086B48 /* ToDoListEntity+CoreDataClass.swift in Sources */,
+				E29E4A9428E5F4FE00086B48 /* DataManger.swift in Sources */,
 				84AA05D428E439A700509DEE /* ListsCell.swift in Sources */,
 				84AA05B028E4350000509DEE /* ListViewController.swift in Sources */,
 				84AA05DA28E456EC00509DEE /* AddNewViewController.swift in Sources */,
 				84AA05AC28E4350000509DEE /* AppDelegate.swift in Sources */,
 				84AA05AE28E4350000509DEE /* SceneDelegate.swift in Sources */,
+				E29E4A9028E5F49600086B48 /* ToDoListEntity+CoreDataProperties.swift in Sources */,
 				84AA05CF28E4363900509DEE /* ListPresenter.swift in Sources */,
 				84AA05B628E4350000509DEE /* TodoList.xcdatamodeld in Sources */,
 			);
@@ -367,6 +387,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P4XWF3FX86;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TodoList/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -374,7 +395,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -395,6 +416,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P4XWF3FX86;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TodoList/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -402,7 +424,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

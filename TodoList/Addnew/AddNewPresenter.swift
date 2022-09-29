@@ -15,4 +15,8 @@ class AddNewPresenter {
     init(with view: AddNewPresenterView) {
         self.view = view
     }
+    func initFruit(_ name: String, date: Date) -> Note  {
+        let item = Note(name: name, date: date)
+        return item
+    }
 }

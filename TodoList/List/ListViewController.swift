@@ -20,6 +20,7 @@ class ListViewController: UIViewController {
     private func setupListTable(){
         listTable.delegate = self
         listTable.dataSource = self
+        listTable.tableFooterView = UIView()
         
     }
     
@@ -42,7 +43,7 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        return 100
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let item = presenter.cellForRowAt(indexPath.row ) else {
@@ -52,16 +53,28 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         vc.delegate = self
         navigationController?.pushViewController(vc, animated: true)
     }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            presenter.deleteList(index: indexPath.row)
+        }
+    }
+    
 }
 
 extension ListViewController: ListPresenterView {
-    func addNewlist(_ data: [Note]) {
-        print("asd")
+    func removelist(at index: Int) {
+        listTable.deleteRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+        
     }
-    
-   
-    
-    func editList(_ index: Int) {
+    func addNewlist(_ data: [Note], count: Int) {
+        let fristIndexPaths = tableView(listTable,numberOfRowsInSection: 0) - count
+        var indexPaths: [IndexPath] = []
+        for i in 0..<count {
+            indexPaths.append(IndexPath(row: i + fristIndexPaths, section: 0))
+        }
+        listTable.insertRows(at: indexPaths, with: .automatic)
+    }
+    func editList(at index: Int) {
         listTable.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
     }
     func showLists() {
@@ -71,10 +84,10 @@ extension ListViewController: ListPresenterView {
 extension ListViewController: EditViewControllerDelegate {
     func editViewController(_ vc: EditViewController, data: Note) {
         if let indexPaths = listTable.indexPathForSelectedRow {
-            presenter.newList(data, index: indexPaths.row)
-        }
+            presenter.editList(data, index: indexPaths.row)
         navigationController?.popViewController(animated: true)
     }
+  }
 }
 extension ListViewController: AddNewViewControllerDelegate {
     func addNewViewController(_ vc: AddNewViewController, didAdd: [Note]) {

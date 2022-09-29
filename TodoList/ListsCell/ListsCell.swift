@@ -8,11 +8,15 @@
 import UIKit
 
 class ListsCell: UITableViewCell {
+    @IBOutlet private var imgList: UIImageView!
     @IBOutlet private var lbName: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        imgList.contentMode = .scaleToFill
+        imgList.layer.cornerRadius = 8
+        imgList.layer.masksToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -22,6 +26,7 @@ class ListsCell: UITableViewCell {
     }
     func updateUI(_ list: Note){
         lbName.text = list.name
+        imgList.image = list.img
     }
     
 
